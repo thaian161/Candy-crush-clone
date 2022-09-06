@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Sweet-land (in process - comming soon)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sweet-land is a Candy Crush clone using React JS
 
-## Available Scripts
+Check out my other projects: [TinyApp](https://github.com/thaian161/tinyApp), [Tweeter](https://github.com/thaian161/tweeter), midterm project [Bake-It-Up](https://github.com/thaian161/Bake-It-Up), and [Scheduler](https://github.com/thaian161/Scheduler-react)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Final Product
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### [👋 Watch Demo Presentation Here 👋](https://youtu.be/vDzoe_sz0AQ)
 
-### `npm test`
+#### _Landing Page_
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+!["Landing Page"]()
 
-### `npm run build`
+#### _Edit Appointment_
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+!["Edit"]()
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### _Error Display: Student name cannot be blank_
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+!["Error"]()
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Dependencies
+-
+-
+-
+-
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Dev-Dependencies
+-
+-
+-
+-
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Getting Started
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Scheduler Project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Scheduler is a SPA ( single-page-application) project, where students can create, edit, and delete interview appointments in real time.
 
-### Code Splitting
+> **_React Library_** is used to build the front end, **_axios_** is used to fetch external **_API_**, **_StoryBook_** is used to design components in isolation, **_Jet Test Framework_** is used for unit and integration testing, and **_Cypress_** is used for end-to-end testing.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This is my fifth project at LHL after [Lotide](https://github.com/thaian161/lotide), [TinyApp](https://github.com/thaian161/tinyApp), [Tweeter](https://github.com/thaian161/tweeter), and midterm project [Bake-It-Up](https://github.com/thaian161/Bake-It-Up)
 
-### Analyzing the Bundle Size
+## Final Product
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### [👋 Watch Live Demo Here 👋](https://youtu.be/OzJA77gHJeU)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- axios:0.27.2
+- classnames: ^2.2.6
+- normalize.css: ^8.0.1
+- react: ^16.14.0
+- react-dom: ^16.9.0
+- react-scripts: 3.4.4
 
-### Deployment
+## Dev-Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- @babel/core: ^7.4.3
+- @storybook/addon-actions: ^5.0.10
+- @storybook/addon-backgrounds: ^5.0.10
+- @storybook/addon-links: ^5.0.10
+- @storybook/addons: ^5.0.10
+- @storybook/react: ^5.0.10
+- @testing-library/jest-dom: ^4.0.0
+- @testing-library/react: ^8.0.7
+- @testing-library/react-hooks: ^8.0.1
+- babel-loader: ^8.0.5
+- prop-types: ^15.8.1
+- react-test-renderer: ^16.14.0
+- sass: ^1.53.0
 
-### `npm run build` fails to minify
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Install dependencies with `npm install`.
+
+### Running Webpack Development Server
+
+```sh
+npm start
+```
+
+### Running Jest Test Framework
+
+```sh
+npm test
+```
+
+### Running Storybook Visual Testbed
+
+```sh
+npm run storybook
+```
+
+> **Hope you enjoy the app and have a nice day :D**
+
+
+> **Hope you enjoy the app and have a nice day :D**
