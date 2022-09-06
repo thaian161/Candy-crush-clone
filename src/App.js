@@ -1,16 +1,26 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
-import BlueCandy from './images/Blue.png';
-import BrownCandy from './images/Brown.png';
-import GreenCandy from './images/Green.png';
-import PinkCandy from './images/Pink.png';
-import PurpleCandy from './images/Purple.png';
-import YellowCandy from './images/Yellow.png';
+import './index.css';
+
+import blueCandy from './images/Blue.png';
+import brownCandy from './images/Brown.png';
+import greenCandy from './images/Green.png';
+import pinkCandy from './images/Pink.png';
+import purpleCandy from './images/Purple.png';
+import yellowCandy from './images/Yellow.png';
+import blank from './images/blank.png';
 
 const width = 8;
-const candyColors = ['pink', 'brown', 'yellow', 'blue', 'green', 'purple'];
+const candyColors = [
+  blueCandy,
+  brownCandy,
+  greenCandy,
+  pinkCandy,
+  purpleCandy,
+  yellowCandy,
+];
 
-function App() {
+const App = () => {
   const [currentColorArrangement, setCurrentColorArrangement] = useState([]);
 
   const checkForColumnOfFour = () => {
@@ -24,7 +34,7 @@ function App() {
         )
       ) {
         columnOfFour.forEach(
-          (square) => (currentColorArrangement[square] = '')
+          (square) => (currentColorArrangement[square] = blank)
         );
       }
     }
@@ -46,7 +56,9 @@ function App() {
           (square) => currentColorArrangement[square] === decidedColor
         )
       ) {
-        rowOfFour.forEach((square) => (currentColorArrangement[square] = ''));
+        rowOfFour.forEach(
+          (square) => (currentColorArrangement[square] = blank)
+        );
       }
     }
   };
@@ -62,7 +74,7 @@ function App() {
         )
       ) {
         columnOfThree.forEach(
-          (square) => (currentColorArrangement[square] = '')
+          (square) => (currentColorArrangement[square] = blank)
         );
       }
     }
@@ -83,7 +95,9 @@ function App() {
           (square) => currentColorArrangement[square] === decidedColor
         )
       ) {
-        rowOfThree.forEach((square) => (currentColorArrangement[square] = ''));
+        rowOfThree.forEach(
+          (square) => (currentColorArrangement[square] = blank)
+        );
       }
     }
   };
@@ -93,13 +107,13 @@ function App() {
       const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
       const isFirstRow = firstRow.includes(i);
 
-      if (isFirstRow && currentColorArrangement[i] === '') {
+      if (isFirstRow && currentColorArrangement[i] === blank) {
         let randomNumber = Math.floor(Math.random() * candyColors.length);
         currentColorArrangement[i] = candyColors[randomNumber];
       }
-      if (currentColorArrangement[i + width] === '') {
+      if (currentColorArrangement[i + width] === blank) {
         currentColorArrangement[i + width] = currentColorArrangement[i];
-        currentColorArrangement[i] = '';
+        currentColorArrangement[i] = blank;
       }
     }
   };
@@ -134,7 +148,7 @@ function App() {
       moveIntoSquareBelow();
 
       setCurrentColorArrangement([...currentColorArrangement]);
-    }, 1000);
+    }, 100);
 
     return () => clearInterval(timer);
   }, [
@@ -154,6 +168,7 @@ function App() {
         {currentColorArrangement.map((candyColor, index) => (
           <img
             key={index}
+            src={candyColor}
             style={{ backgroundColor: candyColor }}
             alt="candy"
           />

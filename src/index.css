@@ -12,6 +12,7 @@
 
 /* this means any img are in the div of the class of game*/
 .game img {
-  width: cal(560/8) px;
-  height: cal(560/8) px;
+  width: 70px;
+  height: 70px;
+
 }
