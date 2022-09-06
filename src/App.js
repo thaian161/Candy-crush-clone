@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 
 const width = 8;
@@ -81,6 +82,15 @@ function App() {
     }
   };
 
+  const moveIntoSquareBelow = () => {
+    for (let i = 0; i < 64 - width; i++) {
+      
+      if ((currentColorArrangement[i + width]) === '') {
+        currentColorArrangement[i + width] = currentColorArrangement[i];
+        currentColorArrangement[i] = '';
+      }
+    }
+  };
   const createBoard = () => {
     const randomColorArrangement = [];
 
@@ -109,9 +119,10 @@ function App() {
       checkForRowOfFour();
       checkForColumnOfThree();
       checkForRowOfThree();
+      moveIntoSquareBelow();
 
       setCurrentColorArrangement([...currentColorArrangement]);
-    }, 100);
+    }, 1000);
 
     return () => clearInterval(timer);
   }, [
@@ -119,6 +130,7 @@ function App() {
     checkForRowOfFour,
     checkForColumnOfThree,
     checkForRowOfThree,
+    moveIntoSquareBelow,
     currentColorArrangement,
   ]);
 
