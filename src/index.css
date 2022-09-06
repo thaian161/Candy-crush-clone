@@ -4,8 +4,8 @@
 }
 
 .game {
-  width: 560px;
-  height: 560px;
+  width: 672px;
+  height: 672px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -14,5 +14,6 @@
 .game img {
   width: 70px;
   height: 70px;
-
+  margin: 4px;
+  margin-bottom: 8px;
 }
