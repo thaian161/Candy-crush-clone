@@ -1,8 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
+import BlueCandy from './images/Blue.png';
+import BrownCandy from './images/Brown.png';
+import GreenCandy from './images/Green.png';
+import PinkCandy from './images/Pink.png';
+import PurpleCandy from './images/Purple.png';
+import YellowCandy from './images/Yellow.png';
 
 const width = 8;
-const candyColors = ['blue', 'green', 'orange', 'purple', 'red', 'yellow'];
+const candyColors = ['pink', 'brown', 'yellow', 'blue', 'green', 'purple'];
 
 function App() {
   const [currentColorArrangement, setCurrentColorArrangement] = useState([]);
@@ -84,8 +90,14 @@ function App() {
 
   const moveIntoSquareBelow = () => {
     for (let i = 0; i < 64 - width; i++) {
-      
-      if ((currentColorArrangement[i + width]) === '') {
+      const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
+      const isFirstRow = firstRow.includes(i);
+
+      if (isFirstRow && currentColorArrangement[i] === '') {
+        let randomNumber = Math.floor(Math.random() * candyColors.length);
+        currentColorArrangement[i] = candyColors[randomNumber];
+      }
+      if (currentColorArrangement[i + width] === '') {
         currentColorArrangement[i + width] = currentColorArrangement[i];
         currentColorArrangement[i] = '';
       }
