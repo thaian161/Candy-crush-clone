@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import './index.css';
 
+import ScoreBoard from './components/ScoreBoard';
+
 import blueCandy from './images/Blue.png';
 import brownCandy from './images/Brown.png';
 import greenCandy from './images/Green.png';
@@ -99,7 +101,7 @@ const App = () => {
   };
 
   const moveIntoSquareBelow = () => {
-    for (let i = 0; i <= 55 ; i++) {
+    for (let i = 0; i <= 55; i++) {
       const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
       const isFirstRow = firstRow.includes(i);
 
@@ -176,25 +178,29 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="game">
-        {currentColorArrangement.map((candyColor, index) => (
-          <img
-            key={index}
-            src={candyColor}
-            alt={candyColor}
-            data-id={index}
-            // style={{ backgroundColor: candyColor }}
-            draggable={true}
-            onDragStart={dragStart}
-            onDragOver={(e) => e.preventDefault()}
-            onDragEnter={(e) => e.preventDefault()}
-            onDragLeave={(e) => e.preventDefault()}
-            onDrop={dragDrop}
-            onDragEnd={dragEnd}
-          />
-        ))}
+      <ScoreBoard /*score={scoreDisplay}*/  />
+      <div className="gameboar-wrapper">
+        <div className="game">
+          {currentColorArrangement.map((candyColor, index) => (
+            <div className="candy-wrapper">
+              <img
+                key={index}
+                src={candyColor}
+                alt={candyColor}
+                data-id={index}
+                // style={{ backgroundColor: candyColor }}
+                draggable={true}
+                onDragStart={dragStart}
+                onDragOver={(e) => e.preventDefault()}
+                onDragEnter={(e) => e.preventDefault()}
+                onDragLeave={(e) => e.preventDefault()}
+                onDrop={dragDrop}
+                onDragEnd={dragEnd}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-      {/* <ScoreBoard score={scoreDisplay} /> */}
     </div>
   );
 };
