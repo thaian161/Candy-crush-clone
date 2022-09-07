@@ -1,6 +1,12 @@
 .app {
   display: flex;
-  padding: 30px;
+
+  padding: 60px;
+
+  background-image: url('https://www.wallpapersun.com/wp-content/uploads/2022/04/Molang-Wallpaper-www.wallpapersun.com-1-5.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .game {
@@ -19,11 +25,14 @@
 }
 
 .gameboar-wrapper {
-  background-color: rgba(0, 0, 0, 0.087);
+  background-color: rgba(255, 255, 255, 0.906);
+
   padding: 5px;
 
   border: solid pink 5px;
   border-radius: 10px;
+
+  margin-left: 30rem;
 }
 
 .candy-wrapper {
@@ -32,11 +41,7 @@
 }
 
 .candy-wrapper:hover {
-  background-color: rgba(255, 255, 255, 0.533);
+  background-color: rgb(255, 216, 216);
 
   border-radius: 10px;
-}
-
-.scoreboard {
-  margin: 10px;
 }
