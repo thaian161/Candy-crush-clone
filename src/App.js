@@ -24,7 +24,7 @@ const App = () => {
   const [currentColorArrangement, setCurrentColorArrangement] = useState([]);
 
   const checkForColumnOfFour = () => {
-    for (let i = 0; i < 39; i++) {
+    for (let i = 0; i <= 39; i++) {
       const columnOfFour = [i, i + width, i + width * 2, i + width * 3];
       const decidedColor = currentColorArrangement[i];
 
@@ -34,7 +34,7 @@ const App = () => {
         )
       ) {
         columnOfFour.forEach(
-          (square) => (currentColorArrangement[square] = blank)
+          (square) => (currentColorArrangement[square] = '')
         );
       }
     }
@@ -56,9 +56,7 @@ const App = () => {
           (square) => currentColorArrangement[square] === decidedColor
         )
       ) {
-        rowOfFour.forEach(
-          (square) => (currentColorArrangement[square] = blank)
-        );
+        rowOfFour.forEach((square) => (currentColorArrangement[square] = ''));
       }
     }
   };
@@ -74,7 +72,7 @@ const App = () => {
         )
       ) {
         columnOfThree.forEach(
-          (square) => (currentColorArrangement[square] = blank)
+          (square) => (currentColorArrangement[square] = '')
         );
       }
     }
@@ -95,38 +93,39 @@ const App = () => {
           (square) => currentColorArrangement[square] === decidedColor
         )
       ) {
-        rowOfThree.forEach(
-          (square) => (currentColorArrangement[square] = blank)
-        );
+        rowOfThree.forEach((square) => (currentColorArrangement[square] = ''));
       }
     }
   };
 
   const moveIntoSquareBelow = () => {
-    for (let i = 0; i < 64 - width; i++) {
+    for (let i = 0; i <= 55 ; i++) {
       const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
       const isFirstRow = firstRow.includes(i);
 
-      if (isFirstRow && currentColorArrangement[i] === blank) {
+      if (isFirstRow && currentColorArrangement[i] === '') {
         let randomNumber = Math.floor(Math.random() * candyColors.length);
         currentColorArrangement[i] = candyColors[randomNumber];
       }
-      if (currentColorArrangement[i + width] === blank) {
+      if (currentColorArrangement[i + width] === '') {
         currentColorArrangement[i + width] = currentColorArrangement[i];
-        currentColorArrangement[i] = blank;
+        currentColorArrangement[i] = '';
       }
     }
   };
 
-  const dragStart = () => {
+  const dragStart = (e) => {
+    console.log(e.target);
     console.log('drag start');
   };
 
-  const dragDrop = () => {
+  const dragDrop = (e) => {
+    console.log(e.target);
     console.log('drag drop');
   };
 
-  const dragEnd = () => {
+  const dragEnd = (e) => {
+    console.log(e.target);
     console.log('drag end');
   };
 
@@ -173,7 +172,7 @@ const App = () => {
     currentColorArrangement,
   ]);
 
-  console.log(currentColorArrangement);
+  // console.log(currentColorArrangement);
 
   return (
     <div className="app">
@@ -182,19 +181,20 @@ const App = () => {
           <img
             key={index}
             src={candyColor}
-            style={{ backgroundColor: candyColor }}
-            alt="candy"
+            alt={candyColor}
             data-id={index}
+            // style={{ backgroundColor: candyColor }}
             draggable={true}
             onDragStart={dragStart}
             onDragOver={(e) => e.preventDefault()}
             onDragEnter={(e) => e.preventDefault()}
-            ondragleave={(e) => e.preventDefault()}
+            onDragLeave={(e) => e.preventDefault()}
             onDrop={dragDrop}
             onDragEnd={dragEnd}
           />
         ))}
       </div>
+      {/* <ScoreBoard score={scoreDisplay} /> */}
     </div>
   );
 };
