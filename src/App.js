@@ -117,6 +117,19 @@ const App = () => {
       }
     }
   };
+
+  const dragStart = () => {
+    console.log('drag start');
+  };
+
+  const dragDrop = () => {
+    console.log('drag drop');
+  };
+
+  const dragEnd = () => {
+    console.log('drag end');
+  };
+
   const createBoard = () => {
     const randomColorArrangement = [];
 
@@ -171,11 +184,19 @@ const App = () => {
             src={candyColor}
             style={{ backgroundColor: candyColor }}
             alt="candy"
+            data-id={index}
+            draggable={true}
+            onDragStart={dragStart}
+            onDragOver={(e) => e.preventDefault()}
+            onDragEnter={(e) => e.preventDefault()}
+            ondragleave={(e) => e.preventDefault()}
+            onDrop={dragDrop}
+            onDragEnd={dragEnd}
           />
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default App;
