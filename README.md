@@ -29,7 +29,7 @@ Install dependencies with `npm install`.
 
 ### Running the game 
 
-```
+```sh
 npm start
 ```
 
