@@ -10,6 +10,10 @@ Sweet-land is a Candy Crush clone using React JS
 
 !["Landing Page"]()
 
+#### _Board Game Page_
+
+!["Landing Page"]()
+
 ## Dependencies
 -
 -
